@@ -43,6 +43,12 @@ p {
 h1, h2, h3, h4, h5, h6 {
 	font-family:36px 'Open Sans', sans-serif;
 }
+.text-center {
+	text-align: center;
+}
+.list-inline li {
+	display: inline-block;
+}
 .fitImage {
 	max-width: 100%;
 	vertical-align: middle;
@@ -180,6 +186,11 @@ a:hover {
 }
 .mrgn30 {
 	margin: 30px 0;
+	height: 200px;
+}
+
+iframe {
+	height: 320px !important;
 }
 .copyright {
 	color: #6D6D6D;
@@ -583,6 +594,22 @@ line-height: 50px;
 #contactUs .heading h2 {
 	color: #fff;
 }
+
+#contactUs {
+	background-image: image_url('contact-us.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	opacity: 1.0;
+	h2 {
+		font-weight: bold;
+	}
+
+	.item {
+		background-color: #F39C12;
+	}
+
+}
 .sub-heading {
 	padding: 15px 0;
 }
@@ -827,9 +854,9 @@ border: 1px solid #fff;
 	padding: 7px 0;
 	margin: 2px;
 }
-#contactUs {
- background:#222;
-}
+// #contactUs {
+ // background:#222;
+// }
 #contactUs .btn {
 	border-radius: 0px !important;
 	background: #F39D17;
@@ -1132,7 +1159,7 @@ footer input.form-control{
 	margin-bottom:10px;
 }
 #services, #aboutUs, #work, #plans, #contactUs{
-padding:85px 0;
+padding:50px 0;
 }
 .heading h2 {
 color: #222;

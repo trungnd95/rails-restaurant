@@ -25,11 +25,9 @@ var customScripts = {
 		});
     },
     fancybox: function () {
-        // fancybox
         $(".fancybox").fancybox();
     },
     onePageNav: function () {
-
         $('#mainNav').onePageNav({
             currentClass: 'active',
             changeHash: false,
@@ -63,10 +61,6 @@ var customScripts = {
                 $("html, body").animate({ scrollTop: 0 }, "slow");
                 return false;
             });
-			$("a[href='#basics']").click(function () {
-                $("html, body").animate({ scrollTop: $('#services').offset().top - 75 }, "slow");
-                return false;
-            });
     },
     bannerHeight: function () {
         var bHeight = $(".banner-container").height();
@@ -96,3 +90,4 @@ var customScripts = {
         customScripts.bannerHeight();
     }
 }
+$(document).ready(function(){customScripts.init();})
