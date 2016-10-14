@@ -90,4 +90,9 @@ var customScripts = {
         customScripts.bannerHeight();
     }
 }
-$(document).ready(function(){customScripts.init();})
+$(document).ready(function(){
+    customScripts.init();
+    $('.navbar-brand').on('click', function(){
+        $(window).reload();
+    })
+})

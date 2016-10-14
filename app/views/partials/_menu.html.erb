@@ -6,4 +6,49 @@
   <% @sections.each do |section| %>
     <li> <a data-filter=".<%= section.name %>" href="#"><%= section.name %></a> </li>
   <% end %>
+  <li class="pull-right">
+    <button href="#" class="button new-foodItem" data-toggle="modal" data-target=".bd-example-modal-lg">Creat Food Item</button>
+  </li>
 </ul>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <%= form_for FoodItem.new do |f| %>
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Create new Food Item</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <%= f.label :name %>:
+          <%= f.text_field :name , class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :description %>:
+          <%= f.text_area :description , class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :price %>:
+          <%= f.text_area :price , class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image_url %>:
+          <%= f.text_area :image_url , class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :section_id, "Section"%>
+          <%= f.select :section_id, options_for_select(@sections_map), {} , {class: "form-control"} %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+

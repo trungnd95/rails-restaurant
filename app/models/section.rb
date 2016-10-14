@@ -1,5 +1,5 @@
 class Section < ApplicationRecord
-  has_many :food_items
+  has_many :food_items, dependent: :destroy
 
   def self.generate_defaults
     %w(Breakfast Lunch Dinner Drinks).each do |name|

@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
+  root 'food_items#index'
+  resources :food_items
 end

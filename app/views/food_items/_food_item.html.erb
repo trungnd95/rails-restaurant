@@ -1,0 +1,17 @@
+<li class="item <%= food_item.section.name %>" style="position: absolute; left: 0px; top: 0px;">
+  <a href="<%= food_item.image_url %>" class="fancybox"><%= image_tag( food_item.image_url, alt: food_item.name)  %>
+    <div class="overlay">
+      <span><%= food_item.name %></span>
+    </div>
+  </a>
+  <div class="overlay-footer">
+    <span class="ordered">
+        Ordered: <%= food_item.orders.count %>
+    </span>
+    <%= link_to(food_item, title: "Detail") do %>
+      <i class="fa fa-share" aria-hidden="true"></i>
+    <% end %>
+
+  </div>
+ </li>
+

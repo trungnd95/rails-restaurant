@@ -1,0 +1,26 @@
+<section class="food_item_detail">
+  <div class="container">
+    <div class="row">
+      <h3 class="text-center" style="margin-bottom: 3rem"><%= @food_item.name %></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-5 food_item_image">
+        <%= image_tag(@food_item.image_url, alt: @food_item.name) %>
+      </div>
+      <div class="col-md-7 food_item_info">
+        <div class="description info_item">
+          <h5 class="text-bold"><i class="fa fa-check" aria-hidden="true"></i>Description </h5>
+          <p>
+            <%= @food_item.description %>
+          </p>
+        </div>
+        <div class="ordered info_item">
+          <h5 class="text-bold">
+            <i class="fa fa-check" aria-hidden="true"></i>Orders: <span><%= @food_item.orders.count %></span>
+          </h5>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
