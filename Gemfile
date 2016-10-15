@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'byebug'
+gem 'ratyrate'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

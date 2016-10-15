@@ -1009,6 +1009,25 @@ background: #F39D17;
 	}
 }
 
+.comment {
+	// background: #ecf0f0;
+	// border: 1px solid #bdc3c7;
+	margin: 1rem auto;
+	// text-align:center
+	padding-left: 45%;
+	// transform: translateX(-5%);
+}
+
+.display_comments  .comment:last-child {
+	display: none;
+}
+.comment-hr {
+	width: 150px;
+	height: 2px;
+	// margin: 5px auto;
+	background-color:#1abc9c
+}
+
 .food_item_detail {
 	padding: 5em 0em;
 	h3 {

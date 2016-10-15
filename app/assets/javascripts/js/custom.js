@@ -94,5 +94,47 @@ $(document).ready(function(){
     customScripts.init();
     $('.navbar-brand').on('click', function(){
         $(window).reload();
+    });
+
+  $('#new_comment').on('submit', function(e){
+    e.preventDefault();
+    data = $(this).serialize();
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: 'POST',
+      dataType: 'JSON',
+      data: data,
+      success: function(result) {
+        var comments =  $('.comments_number').html();
+        var comments_number =  parseInt(comments);
+        comments_number += 1;
+        $('.comments_number').html(comments_number);
+        var html = '<div class="comment">';
+        html +=  '<div class="review-rating" data-score="' + result.rating + '"></div>';
+        html += '<p>' + result.body + '</p>';
+        html += '<hr class="comment-hr" />';
+        html += '</div>';
+        $('.display_comments').prepend(html);
+        $('.comment').find('.review-rating').raty({
+            readOnly: true,
+            score: function(){
+              return $(this).attr('data-score');
+          },
+          path: '/assets/'
+
+      });
+
+      },
+      error: function(error) {
+        alert(error);
+      },
+      complete: function(){
+        $('#new_comment')[0].reset();
+        $('#new_comment').find('input[type="submit"]').removeAttr('disabled');
+      }
+
     })
+  })
+
 })

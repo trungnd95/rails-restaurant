@@ -26,6 +26,12 @@ class FoodItemsController < ApplicationController
   end
 
   def show
+    @comment =  @food_item.comments.new
+    if @food_item.comments.count == 0
+      @average_rating =  0
+    else
+      @average_rating = @food_item.comments.average(:rating).round(2)
+    end
   end
 
   private
