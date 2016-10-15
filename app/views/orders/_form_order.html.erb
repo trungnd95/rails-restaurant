@@ -1,0 +1,48 @@
+<%= form_for [@food_item, @order] do |f| %>
+<% if @order.errors.any? %>
+  <div class="form-group">
+    <h4><%= pluralize(@order.errors.count, "error")%> prvented this form submit!</h4>
+    <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<input type="hidden" name="food_item_price" value="<%= @food_item.price%>" class="food_item_price" />
+<div class="form-group">
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control", placeholder: "what's your name?" %>
+</div>
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control", placeholder: "what's your email?" %>
+</div>
+<div class="form-group">
+  <%= f.label :phone, "Your Phone Number" %>
+  <%= f.text_field :phone, class: "form-control", placeholder: "what's the number of?" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :address %>
+  <%= f.text_field :address, class: "form-control", placeholder: "what's your address?" %>
+</div>
+
+<div class="form-group">
+  <%= f.label :number_of_foot_items, "How many fooditem do you want to order?" %>
+  <%= f.number_field :number_of_foot_items, class: "form-control", value: 1 %>
+</div>
+
+<div class="form-group">
+  <label for="coupon-code">Coupon Code</label>
+  <input type="text" id="coupon_code" class="form-control" />
+  <p class="result-coupon"></p>
+</div>
+
+<div class="form-group">
+  <p><strong>Total: </strong><span class="price-food"><%= @food_item.price%></span> VND</p>
+</div>
+<div class="form-group">
+  <%= f.submit "Send" , class: "form-control btn-primary" %>
+</div>
+<% end %>

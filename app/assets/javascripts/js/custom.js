@@ -1,6 +1,3 @@
-// Custom Script
-// Developed by: Samson.Onna
-// CopyRights : http://webthemez.com
 var customScripts = {
     profile: function () {
      	 var portfolio = $('#portfolio');
@@ -135,6 +132,29 @@ $(document).ready(function(){
       }
 
     })
+  });
+
+  $("#new_order").on ('keyup', '#coupon_code', function(){
+    var coupon = $(this).val();
+    if(coupon == 'CODERSCHOOL')
+    {
+      $('.result-coupon').html('<p class="text-success">Pefect!!! You will be gave 50% discount in toal</p>');
+      var price =  $('.price-food').html();
+      $('.price-food').html(Math.ceil(price/2));
+    }
+    else {
+     $('.result-coupon').html('<p class="text-danger">Wrong =( Try again !</p>');
+    }
+  });
+
+  $("#new_order").on ('change', '#order_number_of_foot_items', function(){
+    var number = parseInt($(this).val());
+    var price =  parseInt($(this).parent().parent().find('.food_item_price').val());
+    $('.price-food').html(number*price);
+  });
+
+  $("#new_order").on ('submit', function(){
+    $(this).find('input[type="submit"]').removeAttr('disabled');
   })
 
 })

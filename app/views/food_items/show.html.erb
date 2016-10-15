@@ -27,6 +27,9 @@
           <div class="average_rating" data-score="<%= @average_rating %>" style="display:inline-block"></div>
         </div>
 
+         <div class="info_item" style="margin-top: 2rem">
+          <%= link_to "Order Now", new_food_item_order_path(@food_item), class: "btn btn-danger" %>
+        </div>
       </div>
     </div>
 

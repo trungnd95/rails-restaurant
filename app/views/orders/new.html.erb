@@ -1,0 +1,32 @@
+<section class="orders">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3 class="text-center">Order Info</h3>
+        <div class="order-form">
+            <%= render 'form_order' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h3 class="text-center">Food Item Info</h3>
+        <table class="table table-hover">
+          <tr>
+            <%= image_tag @food_item.image_url, alt: @food_item.name %>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <td><%= @food_item.name %></td>
+          </tr>
+          <tr>
+            <th>Orders</th>
+            <td><%= @food_item.orders.count %></td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= @food_item.description %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

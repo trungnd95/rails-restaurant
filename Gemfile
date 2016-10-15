@@ -14,6 +14,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'byebug'
 gem 'ratyrate'
+gem 'sweet-alert'
+gem 'ransack'
 group :development, :test do
   gem 'byebug', platform: :mri
 end

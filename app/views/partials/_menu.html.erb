@@ -1,8 +1,5 @@
  <ul class="filters list-inline">
   <li> <a class="active" data-filter="*" href="#">All</a> </li>
-  <!-- <li> <a data-filter=".photography" href="#">Continental</a> </li> -->
-  <!-- <li> <a data-filter=".branding" href="#">Chines</a> </li> -->
-  <!-- <li> <a data-filter=".web" href="#">Traditional</a> </li> -->
   <% @sections.each do |section| %>
     <li> <a data-filter=".<%= section.name %>" href="#"><%= section.name %></a> </li>
   <% end %>

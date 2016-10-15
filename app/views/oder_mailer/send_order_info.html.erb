@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[Trung Manucian] Order Information Confirm</title>
+</head>
+<body>
+  <h2>Trung Manucian thanks for your order !</h2>
+  <p>Please recheck your information that you just registerd at TrungManucian Restaurant</p>
+
+  <table class="table table-hover">
+    <th>Name</th>
+    <td><%= @order.name %></td><br/>
+    <p></p>
+    <th>Email</th>
+    <td><%= @order.email %></td><br/>
+    <p></p>
+    <th>Address</th>
+    <td><%= @order.address %></td><br/>
+    <p></p>
+    <th>Phone number</th>
+    <td><%= @order.phone %> </td><br/>
+    <p></p>
+    <th>Amount</th>
+    <td><%= @order.number_of_foot_items %> </td><br/>
+  </table>
+</body>
+</html>
