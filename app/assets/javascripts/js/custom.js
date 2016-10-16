@@ -87,7 +87,7 @@ var customScripts = {
         customScripts.bannerHeight();
     }
 }
-$(document).ready(function(){
+$(document).on('turbolinks:load', function(){
     customScripts.init();
     $('.navbar-brand').on('click', function(){
         $(window).reload();
