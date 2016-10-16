@@ -14,6 +14,12 @@
             <%= @food_item.description %>
           </p>
         </div>
+        <div class="description info_item">
+          <h5 class="text-bold"><i class="fa fa-check" aria-hidden="true"></i>Price </h5>
+          <p>
+            <%= @food_item.price %> VND
+          </p>
+        </div>
         <div class="ordered info_item">
           <h5 class="text-bold">
             <i class="fa fa-check" aria-hidden="true"></i>Orders: <span><%= @food_item.orders.count %></span>
